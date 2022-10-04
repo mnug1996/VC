@@ -1,6 +1,6 @@
 #https: // github.com / DataGlacier / VC.git
 import json, os
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+os.chdir(os.path.dirname(os.path.abspath("/Users/Mathew/repos/VC")))
 
 
 # User can add name and favourite sport in response.json
@@ -8,23 +8,23 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
 def load_json():
-    with open('../response.json') as json_obj:
+    with open('/Users/Mathew/repos/VC/response.json') as json_obj:
         response = json.load(json_obj)
     return response
 
 
 response = load_json()
 
-def write_json(data,filename = '../response.json'):
+def write_json(data,filename = '/Users/Mathew/repos/VC/response.json'):
     with open(filename,'w') as file:
         json.dump(data,file,indent=0)
 
 
 def call_sport():
-    name = input("Please add your name: ")
-    sport = input("Please add your favourite sports name: ")
+    name = input("Ted Mathew Nuguid")
+    sport = input("Tennis")
     if (sport == ""):
-        sport = 'Cricket'
+        sport = 'Tennis'
     if (name):
         response[name] = sport
         write_json(response)
